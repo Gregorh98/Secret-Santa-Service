@@ -11,14 +11,18 @@ load_dotenv()
 sender = os.getenv("sender")
 password = os.getenv("password")
 
-santas = [
-    ["Santa 1", "santa1@northpole.com"],
-    ["Santa 2", "santa2@southpole.com"],
-]
+# santas = [
+#     ["Santa 1", "santa1@northpole.com"],
+#     ["Santa 2", "santa2@southpole.com"],
+# ]
+
+santas = os.getenv("santas")
 
 buyingFor = [santa[0] for santa in santas]
 
 matches = []
+
+budget = None
 
 
 def match_santas():
@@ -66,6 +70,8 @@ Its officially %s days till Christmas and its time for Secret Santa %s!
 *-*-*-*-*-*-*-*-*-*-*-*-*-*
 YOU ARE BUYING FOR %s!
 *-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{"Please remember; the budget is %s! Try not to spend too much more or too much less!" if budget else ""}
 			
 Merry Christmas, and happy present hunting!
 			""" % (
