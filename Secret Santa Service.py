@@ -60,8 +60,7 @@ def email_santas(test=True):
         msg['To'] = match[0][1] if not test else sender
         msg['Subject'] = f'Secret Santa {datetime.today().year}!'
         message = f"""
-{"*** THIS IS THE FINAL EMAIL - DISREGARD ALL OTHERS ***" if test else ""}
-Hello Santa %s!
+{"Hello Santa %s!" if not test else "*** THIS IS A TEST ***"}
 Its officially %s days till Christmas and its time for Secret Santa %s!
 			
 *-*-*-*-*-*-*-*-*-*-*-*-*-*
